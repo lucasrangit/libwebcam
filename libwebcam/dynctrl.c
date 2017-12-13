@@ -1168,7 +1168,7 @@ static CResult process_mapping (const xmlNode *node_mapping, ParseContext *ctx)
 	}
 
 	// Add the control to the UVC driver's control list
-	/*
+
 	printf(
 		"uvc_xu_control_mapping = {\n"
 		"	id        = 0x%08x,\n"
@@ -1189,7 +1189,7 @@ static CResult process_mapping (const xmlNode *node_mapping, ParseContext *ctx)
 		mapping_info.v4l2_type,
 		mapping_info.data_type
 	);
-	*/
+
 	int v4l2_ret = ioctl(ctx->v4l2_handle, UVCIOC_CTRL_MAP, &mapping_info);
 	free(mapping_info.menu_info);
 	if(v4l2_ret != 0
