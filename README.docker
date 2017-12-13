@@ -1,0 +1,7 @@
+# Build using Docker
+
+Change the FROM directive to build using the base image you want.
+
+$ docker build --tag local/$(basename "$PWD") .
+$ docker run --rm local/$(basename "$PWD") sh -c 'tar --create /usr/local/bin/uvcdynctrl-0.2.6 /usr/local/lib/libwebcam.so*' | tar --extract --verbose
+
